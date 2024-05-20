@@ -2,15 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Routes', type: :routing do
-  it 'routes root to homes#index' do
-    expect(get: '/').to route_to('homes#index')
-  end
-
-  it 'routes /home to homes#index' do
-    expect(get: '/homes').to route_to('homes#index')
-  end
-
+RSpec.describe 'Device', type: :routing do
   it 'routes devise sign_in' do
     expect(get: '/users/sign_in').to route_to('devise/sessions#new')
   end

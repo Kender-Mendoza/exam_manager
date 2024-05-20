@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_20_145121) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_20_165819) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.string "text"
+    t.boolean "is_correct", default: false
+    t.bigint "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+  end
+
+  create_table "exams", force: :cascade do |t|
+    t.string "title"
+    t.float "test_score"
+    t.date "date_of_realization"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.string "type"
+    t.string "text"
+    t.float "score"
+    t.boolean "is_scorable"
+    t.bigint "exam_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["exam_id"], name: "index_questions_on_exam_id"
+  end
 
   create_table "user_types", force: :cascade do |t|
     t.string "name"
@@ -37,5 +65,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_145121) do
     t.index ["user_type_id"], name: "index_users_on_user_type_id"
   end
 
+  add_foreign_key "answers", "questions"
+  add_foreign_key "questions", "exams"
   add_foreign_key "users", "user_types"
 end
