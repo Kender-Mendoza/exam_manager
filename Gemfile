@@ -21,6 +21,7 @@ gem 'view_component'
 
 group :development, :test do
   gem 'rspec-rails', '~> 6.1.0'
+  gem 'shoulda-matchers', '~> 6.0'
 end
 
 group :development do
