@@ -15,6 +15,7 @@ gem 'puma', '>= 5.0'
 gem 'redis', '>= 4.0.1'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
+gem 'tailwindcss-rails', '~> 2.3'
 gem 'turbo-rails'
 gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'view_component'
