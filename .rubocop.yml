@@ -1,0 +1,17 @@
+AllCops:
+  Exclude:
+    - config.ru
+    - db/schema.rb
+    - config/boot.rb
+    - config/puma.rb
+    - config/importmap.rb
+    - config/environment.rb
+    - bin/*
+    - vendor/**/*
+    - config/environments/*
+    - config/initializers/*
+    - app/channels/application_cable/*
+
+Style/ClassAndModuleChildren:
+  Enabled: true
+  EnforcedStyle: compact
