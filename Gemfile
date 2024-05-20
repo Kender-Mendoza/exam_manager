@@ -20,7 +20,6 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'view_component'
 
 group :development, :test do
-  gem 'pry-rails', '~> 0.0.5'
   gem 'rspec-rails', '~> 6.1.0'
 end
 
