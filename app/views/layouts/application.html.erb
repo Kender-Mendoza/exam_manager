@@ -9,11 +9,12 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script src="https://kit.fontawesome.com/3ff34fa8d4.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex">
-      <%= yield %>
-    </main>
+  <body class='dark:bg-gray-700'>
+    <%= render Navbar::NavbarComponent.new(current_user:, signed_in: signed_in?, options: [{ link_content: 'the_profil_link', link_path: 'path' }]) %>
+
+    <%= yield %>
   </body>
 </html>

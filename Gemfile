@@ -21,9 +21,14 @@ gem 'tzinfo-data', platforms: %i[windows jruby]
 gem 'view_component'
 
 group :development, :test do
-  gem 'capybara'
   gem 'pry', '~> 0.14.2'
   gem 'rspec-rails', '~> 6.1.0'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'database_cleaner-active_record'
+  gem 'factory_bot_rails'
   gem 'shoulda-matchers', '~> 6.0'
 end
 
