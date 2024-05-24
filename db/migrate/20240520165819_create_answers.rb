@@ -6,6 +6,7 @@ class CreateAnswers < ActiveRecord::Migration[7.1] # :nodoc:
       t.string :text
       t.boolean :is_correct, default: false
       t.references :question, foreign_key: true
+      t.boolean :selected, default: false
 
       t.timestamps
     end

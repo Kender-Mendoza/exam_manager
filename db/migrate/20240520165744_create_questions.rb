@@ -3,7 +3,7 @@
 class CreateQuestions < ActiveRecord::Migration[7.1] # :nodoc:
   def change
     create_table :questions do |t|
-      t.string :type
+      t.string :type_name
       t.string :text
       t.float :score
       t.boolean :is_scorable

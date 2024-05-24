@@ -11,4 +11,8 @@ class User < ApplicationRecord # :nodoc:
   validates :phone_number, presence: true, uniqueness: true, format: { with: /\A\d{9}\z/, message: 'must be 9 digits' }
 
   belongs_to :user_type
+
+  scope :default, -> { where(user_type_id: UserType::DEFAULT) }
+
+  delegate :admin?, :default?, to: :user_type
 end

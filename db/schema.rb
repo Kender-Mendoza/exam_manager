@@ -18,6 +18,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_165819) do
     t.string "text"
     t.boolean "is_correct", default: false
     t.bigint "question_id"
+    t.boolean "selected", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["question_id"], name: "index_answers_on_question_id"
@@ -32,7 +33,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_20_165819) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.string "type"
+    t.string "type_name"
     t.string "text"
     t.float "score"
     t.boolean "is_scorable"

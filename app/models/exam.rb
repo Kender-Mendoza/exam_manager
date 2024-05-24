@@ -5,5 +5,6 @@ class Exam < ApplicationRecord # :nodoc:
   validates :test_score, presence: true, numericality: true
   validates :date_of_realization, presence: true
 
-  has_many :questions
+  has_many :questions, dependent: :destroy, inverse_of: :question
+  accepts_nested_attributes_for :questions, allow_destroy: true
 end
